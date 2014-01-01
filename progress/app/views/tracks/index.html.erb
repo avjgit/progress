@@ -1,6 +1,8 @@
 <h1>Listing tracks</h1>
 
-<table>
+ <%= render :partial => @tracks %>
+
+<!-- <table>
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -20,6 +22,6 @@
 <% end %>
 </table>
 
-<br />
+<br /> -->
 
 <%= link_to 'New Track', new_track_path %>
