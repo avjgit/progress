@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<%= render :partial => @track %>
+<!-- <p>
+  <b>Title:</b>
+  <%= @track.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @track.description %>
+</p> -->
+
+
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>
+
+<h2>Steps</h2>
+<div id="steps">
+<%= render :partial => @track.steps %>
+</div>
+
+<%= form_for [@track, Step.new] do |f| %>
+  <p>
+    <%= f.label :title, "New step" %><br/>
+    <%= f.text_area :description %>
+  </p>
+  <p><%= f.submit "Add step" %></p>
+<% end %>

@@ -1,0 +1,1490 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-12-30 23:13:41 -0800
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (2ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-12-31 04:14:12 -0800
+Served asset /rails.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (49.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (6.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateTracks (20140101192817)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "tracks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140101192817')[0m
+  [1m[35m (10.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-01-01 11:29:18 -0800
+Connecting to database specified by database.yml
+Served asset /rails.png - 304 Not Modified (4ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 11:29:22 -0800
+Processing by TracksController#index as HTML
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" [0m
+  Rendered tracks/index.html.erb within layouts/application (4.7ms)
+Compiled scaffolds.css  (15ms)  (pid 2048)
+Compiled tracks.css  (19ms)  (pid 2048)
+Compiled application.css  (45ms)  (pid 2048)
+Compiled jquery.js  (1ms)  (pid 2048)
+Compiled jquery_ujs.js  (20ms)  (pid 2048)
+Compiled tracks.js  (224ms)  (pid 2048)
+Compiled application.js  (272ms)  (pid 2048)
+Completed 200 OK in 437ms (Views: 396.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 11:29:22 -0800
+Served asset /scaffolds.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 11:29:22 -0800
+Served asset /application.css - 200 OK (19ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 11:29:22 -0800
+Served asset /tracks.css - 200 OK (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:22 -0800
+Served asset /tracks.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:22 -0800
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:22 -0800
+Served asset /application.js - 200 OK (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:22 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/tracks/new" for 127.0.0.1 at 2014-01-01 11:29:41 -0800
+Processing by TracksController#new as HTML
+  Rendered tracks/_form.html.erb (18.5ms)
+  Rendered tracks/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 11:29:41 -0800
+Served asset /scaffolds.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 11:29:41 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:41 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:41 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:41 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2014-01-01 11:29:57 -0800
+Processing by TracksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "track"=>{"title"=>"timekla tehnologijas", "description"=>"asdf asdfas we awe as ad a"}, "commit"=>"Create Track"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (11.9ms)[0m  [1mINSERT INTO "tracks" ("created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 01 Jan 2014 19:29:57 UTC +00:00], ["description", "asdf asdfas we awe as ad a"], ["title", "timekla tehnologijas"], ["updated_at", Wed, 01 Jan 2014 19:29:57 UTC +00:00]]
+  [1m[35m (26.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/tracks/1
+Completed 302 Found in 42ms (ActiveRecord: 38.7ms)
+
+
+Started GET "/tracks/1" for 127.0.0.1 at 2014-01-01 11:29:58 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrack Load (0.2ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered tracks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 11:29:58 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 11:29:58 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:58 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:58 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 11:29:58 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 11:30:01 -0800
+Processing by TracksController#index as HTML
+  [1m[35mTrack Load (0.2ms)[0m  SELECT "tracks".* FROM "tracks" 
+  Rendered tracks/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 11:30:01 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 11:30:01 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 11:30:01 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 11:30:01 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 11:30:01 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateTracks (20140101192817)
+Migrating to CreateSteps (20140101194512)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "steps" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "track_id" integer, "title" varchar(255), "description" text, "weight" integer, "grade" integer, "deadline" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_steps_on_track_id" ON "steps" ("track_id")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140101194512')
+  [1m[36m (44.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Processing by TracksController#index as HTML
+  [1m[36mTrack Load (0.0ms)[0m  [1mSELECT "tracks".* FROM "tracks" [0m
+  Rendered tracks/index.html.erb within layouts/application (2.9ms)
+Compiled steps.css  (2ms)  (pid 2048)
+Compiled application.css  (7ms)  (pid 2048)
+Compiled steps.js  (127ms)  (pid 2048)
+Compiled application.js  (136ms)  (pid 2048)
+Completed 200 OK in 201ms (Views: 195.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Served asset /application.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Served asset /steps.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Served asset /steps.js - 200 OK (1ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:03:37 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks/1" for 127.0.0.1 at 2014-01-01 13:03:39 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTrack Load (0.2ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered tracks/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:03:39 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:03:39 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:03:39 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:03:39 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:03:39 -0800
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:03:39 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:03:39 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Processing by TracksController#index as HTML
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" [0m
+  Rendered tracks/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 15ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Served asset /steps.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:51 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/tracks/new" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Processing by TracksController#new as HTML
+  Rendered tracks/_form.html.erb (2.6ms)
+  Rendered tracks/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Served asset /steps.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:13:53 -0800
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2014-01-01 13:13:59 -0800
+Processing by TracksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "track"=>{"title"=>"sdf", "description"=>"asdfa sd asd adsf "}, "commit"=>"Create Track"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `body' for #<Track:0xa81469c>):
+  app/controllers/tracks_controller.rb:46:in `block in create'
+  app/controllers/tracks_controller.rb:45:in `create'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.5ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Processing by TracksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "track"=>{"title"=>"sdf", "description"=>"asdfa sd asd adsf "}, "commit"=>"Create Track"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tracks" ("created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 01 Jan 2014 21:14:57 UTC +00:00], ["description", "asdfa sd asd adsf "], ["title", "sdf"], ["updated_at", Wed, 01 Jan 2014 21:14:57 UTC +00:00]]
+  [1m[35m (20.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/tracks/2
+Completed 302 Found in 31ms (ActiveRecord: 21.8ms)
+
+
+Started GET "/tracks/2" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrack Load (0.2ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered tracks/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:14:57 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks/2/edit" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Processing by TracksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTrack Load (0.1ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered tracks/_form.html.erb (1.8ms)
+  Rendered tracks/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:00 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started PUT "/tracks/2" for 127.0.0.1 at 2014-01-01 13:15:02 -0800
+Processing by TracksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "track"=>{"title"=>"sdf", "description"=>"asdfa sd asd adsf "}, "commit"=>"Update Track", "id"=>"2"}
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tracks/2
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/tracks/2" for 127.0.0.1 at 2014-01-01 13:15:02 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTrack Load (0.1ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered tracks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:03 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:03 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:03 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:03 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:03 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:03 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:03 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:03 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:03 -0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Processing by TracksController#index as HTML
+  [1m[36mTrack Load (2.3ms)[0m  [1mSELECT "tracks".* FROM "tracks" [0m
+  Rendered tracks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:15:04 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Processing by TracksController#index as HTML
+  [1m[35mTrack Load (2.4ms)[0m  SELECT "tracks".* FROM "tracks" 
+  Rendered tracks/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:17 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:29:21 -0800
+Processing by TracksController#index as HTML
+  [1m[36mTrack Load (0.3ms)[0m  [1mSELECT "tracks".* FROM "tracks" [0m
+  Rendered tracks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 12.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:22 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:22 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:22 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:22 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:22 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:22 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:22 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:22 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:22 -0800
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/tracks/new" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Processing by TracksController#new as HTML
+  Rendered tracks/_form.html.erb (1.9ms)
+  Rendered tracks/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:29:23 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2014-01-01 13:29:27 -0800
+Processing by TracksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "track"=>{"title"=>"asd", "description"=>"sad a"}, "commit"=>"Create Track"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tracks" ("created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 01 Jan 2014 21:29:27 UTC +00:00], ["description", "sad a"], ["title", "asd"], ["updated_at", Wed, 01 Jan 2014 21:29:27 UTC +00:00]]
+  [1m[35m (36.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/tracks/3
+Completed 302 Found in 37ms (ActiveRecord: 36.1ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-01 13:29:27 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered tracks/show.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (Missing partial tracks/track with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/home/saasbook/progress/progress/app/views"
+):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3:  <%= render :partial => @track %>
+    4: 
+    5:  <%= link_to 'Edit', edit_track_path(@track) %> |
+    6:  <%= link_to 'Back', tracks_path %>
+  app/views/tracks/show.html.erb:3:in `_app_views_tracks_show_html_erb___924626839_90472870'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.3ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2014-01-01 13:30:56 -0800
+Processing by TracksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "track"=>{"title"=>"asd", "description"=>"sad aasd "}, "commit"=>"Create Track"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tracks" ("created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 01 Jan 2014 21:30:56 UTC +00:00], ["description", "sad aasd "], ["title", "asd"], ["updated_at", Wed, 01 Jan 2014 21:30:56 UTC +00:00]]
+  [1m[35m (27.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/tracks/4
+Completed 302 Found in 30ms (ActiveRecord: 27.4ms)
+
+
+Started GET "/tracks/4" for 127.0.0.1 at 2014-01-01 13:30:56 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTrack Load (1.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered tracks/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `steps' for nil:NilClass):
+    17: 
+    18: <h2>Steps</h2>
+    19: <div id="steps">
+    20: <%= render :partial => @post.steps %>
+    21: </div>
+  app/views/tracks/show.html.erb:20:in `_app_views_tracks_show_html_erb___924626839_79589060'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.2ms)
+
+
+Started GET "/tracks/" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Processing by TracksController#index as HTML
+  [1m[35mTrack Load (0.2ms)[0m  SELECT "tracks".* FROM "tracks" 
+  Rendered tracks/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:08 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks/new" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Processing by TracksController#new as HTML
+  Rendered tracks/_form.html.erb (1.6ms)
+  Rendered tracks/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:10 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2014-01-01 13:37:16 -0800
+Processing by TracksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "track"=>{"title"=>"asdf eeq", "description"=>"asd asdfada"}, "commit"=>"Create Track"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tracks" ("created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Wed, 01 Jan 2014 21:37:16 UTC +00:00], ["description", "asd asdfada"], ["title", "asdf eeq"], ["updated_at", Wed, 01 Jan 2014 21:37:16 UTC +00:00]]
+  [1m[36m (28.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tracks/5
+Completed 302 Found in 31ms (ActiveRecord: 29.0ms)
+
+
+Started GET "/tracks/5" for 127.0.0.1 at 2014-01-01 13:37:16 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mTrack Load (0.1ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "5"]]
+  Rendered tracks/show.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    2: 
+    3: 
+    4: 
+    5:  <h2><%= link_to_unless_current @traci.title, @track %></h2>
+    6:  <%= simple_format @track.description %>
+    7: 
+    8: <!-- <p>
+  app/views/tracks/show.html.erb:5:in `_app_views_tracks_show_html_erb___924626839_87097020'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2014-01-01 13:37:28 -0800
+Processing by TracksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "track"=>{"title"=>"asdf eeq", "description"=>"asd asdfada"}, "commit"=>"Create Track"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tracks" ("created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Wed, 01 Jan 2014 21:37:28 UTC +00:00], ["description", "asd asdfada"], ["title", "asdf eeq"], ["updated_at", Wed, 01 Jan 2014 21:37:28 UTC +00:00]]
+  [1m[36m (17.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tracks/6
+Completed 302 Found in 20ms (ActiveRecord: 17.7ms)
+
+
+Started GET "/tracks/6" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mTrack Load (0.0ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "6"]]
+  Rendered tracks/show.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 43ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:29 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/tracks/6/edit" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Processing by TracksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered tracks/_form.html.erb (1.3ms)
+  Rendered tracks/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:32 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Processing by TracksController#index as HTML
+  [1m[35mTrack Load (0.2ms)[0m  SELECT "tracks".* FROM "tracks" 
+  Rendered tracks/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Served asset /tracks.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:37:35 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:39:59 -0800
+Processing by TracksController#index as HTML
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" [0m
+  Rendered tracks/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:39:59 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:39:59 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:39:59 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:00 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:00 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:00 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:00 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:00 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:00 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks/new" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Processing by TracksController#new as HTML
+  Rendered tracks/_form.html.erb (0.1ms)
+  Rendered tracks/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Served asset /steps.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:01 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/tracks" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Processing by TracksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "track"=>{"title"=>"zxf", "description"=>"aadfa"}, "commit"=>"Create Track"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tracks" ("created_at", "description", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 01 Jan 2014 21:40:12 UTC +00:00], ["description", "aadfa"], ["title", "zxf"], ["updated_at", Wed, 01 Jan 2014 21:40:12 UTC +00:00]]
+  [1m[35m (31.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/tracks/7
+Completed 302 Found in 34ms (ActiveRecord: 31.9ms)
+
+
+Started GET "/tracks/7" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  Rendered tracks/_track.html.erb (0.7ms)
+  Rendered tracks/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:12 -0800
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Processing by TracksController#index as HTML
+  [1m[35mTrack Load (0.2ms)[0m  SELECT "tracks".* FROM "tracks" 
+  Rendered tracks/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:40:15 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:41:25 -0800
+Processing by TracksController#index as HTML
+  [1m[36mTrack Load (0.2ms)[0m  [1mSELECT "tracks".* FROM "tracks" [0m
+  Rendered tracks/_track.html.erb (10.4ms)
+  Rendered tracks/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:41:25 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:41:25 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:41:25 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:41:25 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:41:25 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:41:25 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:41:25 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:41:26 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:41:26 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/tracks" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Processing by TracksController#index as HTML
+  [1m[35mTrack Load (0.2ms)[0m  SELECT "tracks".* FROM "tracks" 
+  Rendered tracks/_track.html.erb (6.2ms)
+  Rendered tracks/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:54:37 -0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/tracks/1" for 127.0.0.1 at 2014-01-01 13:54:38 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered tracks/_track.html.erb (0.4ms)
+  Rendered tracks/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `steps' for nil:NilClass):
+    17: 
+    18: <h2>Steps</h2>
+    19: <div id="steps">
+    20: <%= render :partial => @post.steps %>
+    21: </div>
+  app/views/tracks/show.html.erb:20:in `_app_views_tracks_show_html_erb___924626839_85106600'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/tracks/1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTrack Load (0.1ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered tracks/_track.html.erb (6.4ms)
+  [1m[36mStep Load (0.0ms)[0m  [1mSELECT "steps".* FROM "steps" WHERE "steps"."track_id" = 1[0m
+  Rendered collection (0.0ms)
+  Rendered tracks/show.html.erb within layouts/application (65.6ms)
+Completed 200 OK in 71ms (Views: 70.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 13:55:27 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks/1" for 127.0.0.1 at 2014-01-01 14:01:30 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTrack Load (0.1ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered tracks/_track.html.erb (0.5ms)
+  [1m[36mStep Load (0.1ms)[0m  [1mSELECT "steps".* FROM "steps" WHERE "steps"."track_id" = 1[0m
+  Rendered collection (0.0ms)
+  Rendered tracks/show.html.erb within layouts/application (29.1ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (undefined method `body' for #<Step:0xa1118f4>):
+    23: <%= form_for [@track, Step.new] do |f| %>
+    24:   <p>
+    25:     <%= f.label :body, "New step" %><br/>
+    26:     <%= f.text_area :body %>
+    27:   </p>
+    28:   <p><%= f.submit "Add step" %></p>
+    29: <% end %>
+  app/views/tracks/show.html.erb:26:in `block in _app_views_tracks_show_html_erb___924626839_87512650'
+  app/views/tracks/show.html.erb:23:in `_app_views_tracks_show_html_erb___924626839_87512650'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.2ms)
+
+
+Started GET "/tracks/1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTrack Load (0.1ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered tracks/_track.html.erb (3.3ms)
+  [1m[36mStep Load (0.2ms)[0m  [1mSELECT "steps".* FROM "steps" WHERE "steps"."track_id" = 1[0m
+  Rendered collection (0.0ms)
+  Rendered tracks/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Served asset /tracks.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 14:01:50 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started POST "/tracks/1/steps" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Processing by StepsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5hy4VoPUmTK6dzLxBBbxjQdNcL69yei5bhb84bIpJfM=", "step"=>{"description"=>"do this"}, "commit"=>"Add step", "track_id"=>"1"}
+  [1m[35mTrack Load (0.1ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "steps" ("created_at", "deadline", "description", "grade", "title", "track_id", "updated_at", "weight") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 01 Jan 2014 22:07:49 UTC +00:00], ["deadline", nil], ["description", "do this"], ["grade", nil], ["title", nil], ["track_id", 1], ["updated_at", Wed, 01 Jan 2014 22:07:49 UTC +00:00], ["weight", nil]]
+  [1m[36m (20.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tracks/1
+Completed 302 Found in 28ms (ActiveRecord: 20.8ms)
+
+
+Started GET "/tracks/1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTrack Load (0.0ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered tracks/_track.html.erb (0.4ms)
+  [1m[36mStep Load (0.0ms)[0m  [1mSELECT "steps".* FROM "steps" WHERE "steps"."track_id" = 1[0m
+  Rendered steps/_step.html.erb (0.6ms)
+  Rendered tracks/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 13ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Served asset /steps.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-01 14:07:49 -0800
+Served asset /application.js - 304 Not Modified (1ms)
