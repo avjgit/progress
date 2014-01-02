@@ -62,11 +62,12 @@ Progress::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
 	Progress::Application.routes.draw do
-	  resources :tracks do
-		resources :steps, :only => [:create]
-	  end
+	  root :to => 'tracks#index'
 
-	  # root :to => 'welcome#index'
+    resources :tracks do
+      resources :steps, :only => [:create]
+    end
+
 	end
 
 end
