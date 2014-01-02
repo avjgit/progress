@@ -1,0 +1,20 @@
+// Place all the styles related to the Steps controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+input[type="submit"] {
+  @include button;
+}
+
+div#main {
+  @include grid-row;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #000;
+  color: #eee;
+  text-align: center;
+  p {
+    line-height: 100px;
+  }
+}
