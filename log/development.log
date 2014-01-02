@@ -1958,3 +1958,50 @@ Served asset /tracks.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-02 00:57:13 -0800
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/tracks/7" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  Rendered tracks/_track.html.erb (0.4ms)
+  [1m[35mStep Load (0.2ms)[0m  SELECT "steps".* FROM "steps" WHERE "steps"."track_id" = 7
+  Rendered collection (0.0ms)
+  Rendered tracks/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.css?body=1" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Served asset /steps.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/tracks.css?body=1" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Served asset /tracks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-02 01:43:16 -0800
+Served asset /application.js - 304 Not Modified (56ms)
