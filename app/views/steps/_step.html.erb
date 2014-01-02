@@ -1,9 +1,11 @@
 <%= div_for step do %>
   <p>
-    <%= step.title %>
     <strong>
-      Deadline is <%= step.deadline %> ago
+    <%= step.title %>
     </strong>
+    , worth <%= step.weight %>%<br/>
+    Current grade is <%= step.grade %><br/>
+    Deadline is <%= step.deadline %>
     <br/>
     <%= step.description %>
   </p>

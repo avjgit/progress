@@ -22,7 +22,11 @@
 
 <%= form_for [@track, Step.new] do |f| %>
   <p>
-    <%= f.label :title, "New step" %><br/>
+    <%= f.label "Add new step" %><br/>
+    Title: <%= f.text_field :title %><br/>
+    Weight: <%= f.text_field :weight %><br/>
+    Grade: <%= f.text_field :grade %><br/>
+    Deadline: <%= f.text_field :deadline %><br/>
     <%= f.text_area :description %>
   </p>
   <p><%= f.submit "Add step" %></p>
