@@ -13,16 +13,16 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title>Progress</title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Progress" %></title>
 
   	<%= stylesheet_link_tag    "application", :media => "all" %>
-  	<%= javascript_include_tag "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
     <div id="main">
-    <%= yield %>
+      <%= yield %>
     </div>
     
     <%= javascript_include_tag "application" %>
