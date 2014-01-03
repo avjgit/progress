@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   validates_length_of :name, :maximum => 50
   validates_uniqueness_of :email, :case_sensitive => false
   has_secure_password
-  validates_length_of :password, :minimum => 50
+  validates_length_of :password, :minimum => 5
 end
