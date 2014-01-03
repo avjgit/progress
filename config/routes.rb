@@ -1,6 +1,8 @@
 Progress::Application.routes.draw do
 
 
+  get "users/new"
+
   resources :tracks
 
 
@@ -62,7 +64,11 @@ Progress::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
 	Progress::Application.routes.draw do
+  get "users/new"
+
 	  root :to => 'tracks#index'
+
+    match '/signup',  to: 'users#new',            via: 'get'
 
     resources :tracks do
       resources :steps, :only => [:create]
