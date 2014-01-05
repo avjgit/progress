@@ -41,6 +41,7 @@ class TracksController < ApplicationController
   # POST /tracks.json
   def create
     @track = Track.new(params[:track])
+    @track.user_id = current_user.id
 
     respond_to do |format|
       if @track.save
