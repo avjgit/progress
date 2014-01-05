@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :case_sensitive => false
   has_secure_password
   validates_length_of :password, :minimum => 5
+  has_many :tracks
+
 
     def User.new_remember_token
     SecureRandom.urlsafe_base64
