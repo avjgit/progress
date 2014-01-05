@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  @curruser = User.find(current_user.id)
+
   # before_action :signed_in_user, only: [:edit, :update]
   # before_action :correct_user,   only: [:edit, :update]
 

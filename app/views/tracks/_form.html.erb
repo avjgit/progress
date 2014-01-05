@@ -10,11 +10,11 @@
       </ul>
     </div>
   <% end %>
- 
 
-  <div class="field">
-    <%= f.label current_user.id %><br />
-  </div>
+<!--   <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %><br /> 
+  </div> -->
+  <%   @track.user_id = current_user.id %><br /> 
 
   <div class="field">
     <%= f.label :title %><br />
