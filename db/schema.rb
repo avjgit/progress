@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140105132658) do
+ActiveRecord::Schema.define(:version => 20140108124021) do
 
   create_table "steps", :force => true do |t|
     t.integer  "track_id"
@@ -46,6 +46,11 @@ ActiveRecord::Schema.define(:version => 20140105132658) do
   end
 
   add_index "tracks", ["user_id"], :name => "index_tracks_on_user_id"
+
+  create_table "tracks_users", :force => true do |t|
+    t.integer "track_id"
+    t.integer "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

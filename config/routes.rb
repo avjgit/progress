@@ -72,11 +72,20 @@ Progress::Application.routes.draw do
 	  root :to => 'tracks#index'
 
     match '/signup',  to: 'users#new',            via: 'get'
-	match '/signin',  to: 'sessions#new',         via: 'get'
-	match '/signout', to: 'sessions#destroy',     via: 'delete'
+  	match '/signin',  to: 'sessions#new',         via: 'get'
+	  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
     resources :tracks do
       resources :steps, :only => [:create]
+      member do
+        get :students
+      end
+    end
+
+    resources :users do
+      member do
+        get :courses
+      end
     end
 
 	end

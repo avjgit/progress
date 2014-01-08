@@ -8,15 +8,31 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :case_sensitive => false
   has_secure_password
   validates_length_of :password, :minimum => 5
-  has_many :tracks
+  has_many :tracks #as author
 
+  # has_many :students, foreign_key: "user_id", dependent: :destroy
+  
+  # has_many :courses, through: :students, source: :track
+  has_and_belongs_to_many :tracks
 
-    def User.new_remember_token
+  def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
 
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  def learns?(track)
+    tracks_students.where(track_id: track.id).first
+  end
+
+  def learn!(track)
+    tracks_students.create!(track_id: track.id)
+  end
+
+  def unregister!(track)
+    tracks_students.where(track_id: track.id).first.destroy!
   end
 
   private
