@@ -8,12 +8,17 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :case_sensitive => false
   has_secure_password
   validates_length_of :password, :minimum => 5
-  has_many :tracks #as author
+  
+  # has track as author!
+  has_many :tracks 
 
   # has_many :students, foreign_key: "user_id", dependent: :destroy
   
   # has_many :courses, through: :students, source: :track
-  has_and_belongs_to_many :tracks
+  # has_and_belongs_to_many :tracks
+  
+  # has track as student!
+  has_many :courses, through: tracks_users, source: "Track"
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
