@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   # has_and_belongs_to_many :tracks
   
   # has track as student!
-  has_many :courses, through: tracks_users, source: "Track"
+  has_many :tracks_users
+  has_many :courses, through: :tracks_users, source: :track
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

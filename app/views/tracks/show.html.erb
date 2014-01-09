@@ -16,6 +16,12 @@
 <%= link_to 'Edit', edit_track_path(@track) %> |
 <%= link_to 'Back', tracks_path %>
 
+registred users:<br/>
+<% @track.students.each do |student|%>
+    <%= student.id %><br/>
+<% end %>
+
+
 <h3>Steps</h3>
 <div id="steps">
 <%= render :partial => @track.steps %>

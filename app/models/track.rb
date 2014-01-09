@@ -8,6 +8,8 @@ class Track < ActiveRecord::Base
   # as coach!
   belongs_to :user
   # as students!
-  has_many :students, through: tracks_users, source: "User"
+  has_many :tracks_users
+  # has_many :students, :through => :tracks_users, :source => "User"
+  has_many :students, through: :tracks_users, source: :user
   
 end

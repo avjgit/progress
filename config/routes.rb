@@ -63,7 +63,8 @@ Progress::Application.routes.draw do
 
 	Progress::Application.routes.draw do
     # get "users/new"
-    resources :users
+    resources :user
+    resources :track
     resources :sessions, only: [:new, :create, :destroy]
   
 
