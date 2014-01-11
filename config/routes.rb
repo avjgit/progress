@@ -60,12 +60,7 @@ Progress::Application.routes.draw do
   Progress::Application.routes.draw do
     
     get "users/new"
-    
-    resources :track
-    resources :tracks
-
-    resources :users
-    
+        
     resources :sessions, only: [:new, :create, :destroy]
 
 	  root :to => 'tracks#index'
