@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  @curruser = User.find(current_user.id)
+  # @curruser = User.find(current_user.id)
 
   # before_action :signed_in_user, only: [:edit, :update]
   # before_action :correct_user,   only: [:edit, :update]
@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])    # Not the final implementation!
     # @user = User.new(user_params)    # Not the final implementation!
     if @user.save
-      sign_in @user
-      flash[:success] = "Welcome to Progress!"
+      # sign_in @user
+      # flash[:success] = "Welcome to Progress!"
       redirect_to @user
     else
       render 'new'

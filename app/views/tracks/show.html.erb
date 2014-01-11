@@ -18,7 +18,7 @@
 
 registred users:<br/>
 <% @track.students.each do |student|%>
-    <%= student.id %><br/>
+    <%= link_to student.id, student %><br/>
 <% end %>
 
 
