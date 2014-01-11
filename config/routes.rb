@@ -57,19 +57,16 @@ Progress::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  resources :users
-
-
-  get "users/new"
-
-  resources :tracks
-
-	Progress::Application.routes.draw do
-    # get "users/new"
-    resources :user
+  Progress::Application.routes.draw do
+    
+    get "users/new"
+    
     resources :track
+    resources :tracks
+
+    resources :users
+    
     resources :sessions, only: [:new, :create, :destroy]
-  
 
 	  root :to => 'tracks#index'
 
