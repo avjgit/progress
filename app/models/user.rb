@@ -20,9 +20,10 @@ class User < ActiveRecord::Base
     # has track as student!
     # has_many :tracks_users
     # has_many :courses, through: :tracks_users, source: :track
-    # accepts_nested_attributes_for :tracks_user
     has_many :registrations
     has_many :courses, through: :registrations, source: :track
+    accepts_nested_attributes_for :registrations
+    accepts_nested_attributes_for :courses
 
 
   def User.new_remember_token

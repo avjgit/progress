@@ -15,6 +15,8 @@ class TracksController < ApplicationController
   def show
     @track = Track.find(params[:id])
 
+    @new_student = @track.students.build
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @track }
@@ -58,6 +60,9 @@ class TracksController < ApplicationController
   # PUT /tracks/1.json
   def update
     @track = Track.find(params[:id])
+
+    current_user.learn!(@track)
+    # redirect_to @track
 
     respond_to do |format|
       if @track.update_attributes(params[:track])
