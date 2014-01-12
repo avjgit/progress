@@ -23,15 +23,18 @@
 <br/><br/>
 
 
-<h3>Users registered for this course:</h3>
-<% @track.students %>
-<% @track.students.each do |student|%>
-    <%= link_to student.id, student %><br/>
+<% if (@track.students.count == 0) %>
+    <h3><%='Hey, noone joined so far!'%></h3>
+<% else %>
+    <h3>Users registered for this course:</h3>
+    <% @track.students.each do |student|%>
+        <%= link_to student.id, student %><br/>
+    <% end %>
 <% end %>
 
 <br/>
 
-<h3>Steps</h3>
+<h3>Steps for this track:</h3>
 <div id="steps">
 <%= render :partial => @track.steps %>
 </div>
