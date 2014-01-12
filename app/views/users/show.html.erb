@@ -7,6 +7,10 @@
         <%= @user.name %>
         <%= @user.id %>
       </h1>
+      <h3>Steps</h3>
+		<div id="learn">
+		<%= render :partial => @user.courses %>
+		</div>
     </section>
   </aside>
 </div>
