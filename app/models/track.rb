@@ -8,9 +8,11 @@ class Track < ActiveRecord::Base
     # has coach!
     belongs_to :user
     # has students!
-    has_many :tracks_users
-    has_many :students, through: :tracks_users, source: :user
+    # has_many :tracks_users
+    # has_many :students, through: :tracks_users, source: :user
     # accepts_nested_attributes_for :tracks_user
+    has_many :registrations
+    has_many :students, through: :registrations, source: :user
 
   
 end

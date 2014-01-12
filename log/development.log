@@ -37825,3 +37825,619 @@ ActionView::Template::Error (Can't mass-assign protected attributes: user_id):
   Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.8ms)
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateTracks (20140101192817)
+Migrating to CreateSteps (20140101194512)
+Migrating to CreateUsers (20140103212801)
+Migrating to AddIndexToUsersEmail (20140103215501)
+Migrating to AddPasswordDigestToUsers (20140103220013)
+Migrating to AddRememberTokenToUsers (20140104215019)
+Migrating to AddUserIdToTracks (20140105110420)
+Migrating to CreateStudents (20140105132658)
+Migrating to CreateTracksUsers (20140108124021)
+Migrating to CreateRegistrations (20140112091925)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "registrations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "track_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140112091925')[0m
+  [1m[35m (25.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 01:35:56 -0800
+Connecting to database specified by database.yml
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrack Load (1.0ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered tracks/_track.html.erb (86.9ms)
+  Rendered shared/_stats.html.erb (3.7ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1
+  [1m[36mRegistration Load (0.4ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1[0m
+  Rendered tracks/_follow.html.erb (44.3ms)
+  Rendered tracks/_follow_form.html.erb (330.1ms)
+  Rendered tracks/show.html.erb within layouts/application (1008.8ms)
+Completed 500 Internal Server Error in 1517ms
+
+ActionView::Template::Error (undefined method `registraions' for #<Track:0x9a568ac>):
+    1:     <%= form_for(@track.registraions.build(user_id: 1)) do |f| %>
+    2:     	<div><%= f.hidden_field :user_id %></div>
+    3:         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
+    4:     <% end %>
+  app/views/tracks/_follow.html.erb:1:in `_app_views_tracks__follow_html_erb__313573707_78106450'
+  app/views/tracks/_follow_form.html.erb:4:in `_app_views_tracks__follow_form_html_erb___359708497_78189210'
+  app/views/tracks/show.html.erb:16:in `_app_views_tracks_show_html_erb__639616467_71960290'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (18.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (81.1ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 01:36:12 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTrack Load (0.5ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered tracks/_track.html.erb (13.5ms)
+  Rendered shared/_stats.html.erb (0.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1[0m
+  [1m[35mRegistration Load (0.9ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1
+  Rendered tracks/_follow.html.erb (370.4ms)
+  Rendered tracks/_follow_form.html.erb (404.6ms)
+  Rendered tracks/show.html.erb within layouts/application (472.0ms)
+Completed 500 Internal Server Error in 533ms
+
+ActionView::Template::Error (undefined method `registrations_path' for #<#<Class:0x94f9620>:0x94c2800>):
+    1:     <%= form_for(@track.registrations.build(user_id: 1)) do |f| %>
+    2:     	<div><%= f.hidden_field :user_id %></div>
+    3:         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
+    4:     <% end %>
+  app/views/tracks/_follow.html.erb:1:in `_app_views_tracks__follow_html_erb__313573707_75934360'
+  app/views/tracks/_follow_form.html.erb:4:in `_app_views_tracks__follow_form_html_erb___359708497_78189210'
+  app/views/tracks/show.html.erb:16:in `_app_views_tracks_show_html_erb__639616467_71960290'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (41.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (84.2ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 01:39:08 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrack Load (0.7ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered tracks/_track.html.erb (20.0ms)
+  Rendered shared/_stats.html.erb (0.2ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1
+  [1m[36mRegistration Load (0.7ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1[0m
+  Rendered tracks/_follow.html.erb (90.2ms)
+  Rendered tracks/_follow_form.html.erb (476.3ms)
+  Rendered tracks/show.html.erb within layouts/application (960.1ms)
+Completed 500 Internal Server Error in 1179ms
+
+ActionView::Template::Error (Can't mass-assign protected attributes: user_id):
+    1:     <%= form_for(@track.students.build(user_id: 1)) do |f| %>
+    2:     	<div><%= f.hidden_field :user_id %></div>
+    3:         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
+    4:     <% end %>
+  app/views/tracks/_follow.html.erb:1:in `_app_views_tracks__follow_html_erb__313573707_81651360'
+  app/views/tracks/_follow_form.html.erb:4:in `_app_views_tracks__follow_form_html_erb___359708497_78189210'
+  app/views/tracks/show.html.erb:16:in `_app_views_tracks_show_html_erb__639616467_71960290'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (36.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (94.2ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 01:39:57 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTrack Load (0.8ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered tracks/_track.html.erb (31.1ms)
+  Rendered shared/_stats.html.erb (0.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1[0m
+  [1m[35mRegistration Load (0.7ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1
+  Rendered tracks/_follow.html.erb (18.5ms)
+  Rendered tracks/_follow_form.html.erb (62.8ms)
+  Rendered tracks/show.html.erb within layouts/application (588.4ms)
+Completed 500 Internal Server Error in 801ms
+
+ActionView::Template::Error (Can't mass-assign protected attributes: user_id):
+    1:     <%= form_for(@track.students.build(user_id: 1)) do |f| %>
+    2:     	<div><%= f.hidden_field :user_id %></div>
+    3:         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
+    4:     <% end %>
+  app/views/tracks/_follow.html.erb:1:in `_app_views_tracks__follow_html_erb__313573707_81651360'
+  app/views/tracks/_follow_form.html.erb:4:in `_app_views_tracks__follow_form_html_erb___359708497_78189210'
+  app/views/tracks/show.html.erb:16:in `_app_views_tracks_show_html_erb__639616467_71960290'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (65.6ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 01:43:10 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrack Load (0.7ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered tracks/_track.html.erb (4.8ms)
+  Rendered shared/_stats.html.erb (0.2ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1
+  [1m[36mRegistration Load (5.8ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1[0m
+  Rendered tracks/_follow.html.erb (28.8ms)
+  Rendered tracks/_follow_form.html.erb (53.3ms)
+  Rendered tracks/show.html.erb within layouts/application (94.9ms)
+Completed 500 Internal Server Error in 128ms
+
+ActionView::Template::Error (Can't mass-assign protected attributes: track_id):
+    1:     <%= form_for(current_user.courses.build(track_id: @track.id)) do |f| %>
+    2:     	<div><%= f.hidden_field :track_id %></div>
+    3:         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
+    4:     <% end %>
+  app/views/tracks/_follow.html.erb:1:in `_app_views_tracks__follow_html_erb__313573707_83838940'
+  app/views/tracks/_follow_form.html.erb:4:in `_app_views_tracks__follow_form_html_erb___359708497_78189210'
+  app/views/tracks/show.html.erb:16:in `_app_views_tracks_show_html_erb__639616467_71960290'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (26.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (122.5ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 01:58:29 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTrack Load (0.9ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered tracks/_track.html.erb (12.0ms)
+  Rendered shared/_stats.html.erb (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1[0m
+  [1m[35mRegistration Load (5.3ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1
+  Rendered tracks/_follow.html.erb (28.3ms)
+  Rendered tracks/_follow_form.html.erb (60.5ms)
+  Rendered tracks/show.html.erb within layouts/application (105.5ms)
+Completed 500 Internal Server Error in 147ms
+
+ActionView::Template::Error (Can't mass-assign protected attributes: track_id):
+    1:     <%= form_for(current_user.courses.build(track_id: @track.id)) do |f| %>
+    2:     	<div><%= f.hidden_field :track_id %></div>
+    3:         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
+    4:     <% end %>
+  app/views/tracks/_follow.html.erb:1:in `_app_views_tracks__follow_html_erb__313573707_83838940'
+  app/views/tracks/_follow_form.html.erb:4:in `_app_views_tracks__follow_form_html_erb___359708497_78189210'
+  app/views/tracks/show.html.erb:16:in `_app_views_tracks_show_html_erb__639616467_71960290'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (97.2ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 02:00:05 -0800
+Connecting to database specified by database.yml
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrack Load (0.4ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered tracks/_track.html.erb (24.0ms)
+  Rendered shared/_stats.html.erb (1.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1
+  [1m[36mRegistration Load (0.3ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: track_id
+  Rendered tracks/_follow.html.erb (73.1ms)
+  Rendered tracks/_follow_form.html.erb (186.6ms)
+  Rendered tracks/show.html.erb within layouts/application (403.3ms)
+Completed 500 Internal Server Error in 766ms
+
+ActionView::Template::Error (undefined method `track_id' for #<Track:0xa7a2fc4>):
+    1:     <%= form_for(current_user.courses.build(track_id: @track.id)) do |f| %>
+    2:     	<div><%= f.hidden_field :track_id %></div>
+    3:         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
+    4:     <% end %>
+  app/views/tracks/_follow.html.erb:2:in `block in _app_views_tracks__follow_html_erb__223421342_93713150'
+  app/views/tracks/_follow.html.erb:1:in `_app_views_tracks__follow_html_erb__223421342_93713150'
+  app/views/tracks/_follow_form.html.erb:4:in `_app_views_tracks__follow_form_html_erb___248969036_97892320'
+  app/views/tracks/show.html.erb:16:in `_app_views_tracks_show_html_erb__61123517_88223410'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (39.5ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 02:00:45 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTrack Load (0.1ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered tracks/_track.html.erb (0.6ms)
+  Rendered shared/_stats.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1[0m
+  [1m[35mRegistration Load (0.2ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1
+  Rendered tracks/_follow.html.erb (0.4ms)
+  Rendered tracks/_follow_form.html.erb (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "registrations" ON "users"."id" = "registrations"."user_id" WHERE "registrations"."track_id" = 3[0m
+  [1m[35mStep Load (0.1ms)[0m  SELECT "steps".* FROM "steps" WHERE "steps"."track_id" = 3
+  Rendered collection (0.0ms)
+  Rendered tracks/show.html.erb within layouts/application (59.5ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 155ms (Views: 152.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation_and_overrides.css - 304 Not Modified (38ms)
+
+
+Started GET "/assets/vendor/custom.modernizr.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /vendor/custom.modernizr.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.alerts.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.clearing.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.cookie.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.dropdown.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.forms.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.joyride.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.magellan.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.orbit.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.topbar.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.tooltips.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.section.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.reveal.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/foundation.placeholder.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /foundation/index.js - 304 Not Modified (54ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /steps.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-12 02:00:46 -0800
+Served asset /tracks.js - 304 Not Modified (1ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 02:01:11 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered tracks/_track.html.erb (0.6ms)
+  Rendered shared/_stats.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1
+  [1m[36mRegistration Load (0.1ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: track_id
+  Rendered tracks/_follow.html.erb (8.9ms)
+  Rendered tracks/_follow_form.html.erb (10.4ms)
+  Rendered tracks/show.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `track_id' for #<Track:0xb03d97c>):
+    1:     <%= form_for(current_user.courses.build(track_id: @track)) do |f| %>
+    2:     	<div><%= f.hidden_field :track_id %></div>
+    3:         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
+    4:     <% end %>
+  app/views/tracks/_follow.html.erb:2:in `block in _app_views_tracks__follow_html_erb__223421342_92388350'
+  app/views/tracks/_follow.html.erb:1:in `_app_views_tracks__follow_html_erb__223421342_92388350'
+  app/views/tracks/_follow_form.html.erb:4:in `_app_views_tracks__follow_form_html_erb___248969036_97892320'
+  app/views/tracks/show.html.erb:16:in `_app_views_tracks_show_html_erb__61123517_88223410'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.2ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 02:01:32 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTrack Load (0.1ms)[0m  SELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered tracks/_track.html.erb (0.5ms)
+  Rendered shared/_stats.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1[0m
+  [1m[35mRegistration Load (0.2ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1
+WARNING: Can't mass-assign protected attributes: user_id
+  Rendered tracks/_follow.html.erb (2.8ms)
+  Rendered tracks/_follow_form.html.erb (17.7ms)
+  Rendered tracks/show.html.erb within layouts/application (20.6ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined method `user_id' for #<User:0xbe5c5f8>):
+    1:     <%= form_for(@track.students.build(user_id: current_user.id)) do |f| %>
+    2:     	<div><%= f.hidden_field :user_id %></div>
+    3:         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
+    4:     <% end %>
+  app/views/tracks/_follow.html.erb:2:in `block in _app_views_tracks__follow_html_erb__223421342_99807820'
+  app/views/tracks/_follow.html.erb:1:in `_app_views_tracks__follow_html_erb__223421342_99807820'
+  app/views/tracks/_follow_form.html.erb:4:in `_app_views_tracks__follow_form_html_erb___248969036_97892320'
+  app/views/tracks/show.html.erb:16:in `_app_views_tracks_show_html_erb__61123517_88223410'
+  app/controllers/tracks_controller.rb:18:in `show'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.3ms)
+
+
+Started GET "/tracks/3" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Processing by TracksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTrack Load (0.1ms)[0m  [1mSELECT "tracks".* FROM "tracks" WHERE "tracks"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered tracks/_track.html.erb (0.5ms)
+  Rendered shared/_stats.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1
+  [1m[36mRegistration Load (0.1ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 8 AND "registrations"."track_id" = 3 LIMIT 1[0m
+WARNING: Can't mass-assign protected attributes: user_id
+  Rendered tracks/_follow.html.erb (3.2ms)
+  Rendered tracks/_follow_form.html.erb (11.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "registrations" ON "users"."id" = "registrations"."user_id" WHERE "registrations"."track_id" = 3
+  [1m[36mStep Load (0.2ms)[0m  [1mSELECT "steps".* FROM "steps" WHERE "steps"."track_id" = 3[0m
+  Rendered collection (0.0ms)
+  Rendered tracks/show.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 71ms (Views: 62.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation_and_overrides.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/vendor/custom.modernizr.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /vendor/custom.modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.cookie.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.forms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.clearing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.joyride.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.magellan.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.orbit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.tooltips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.reveal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.section.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/foundation.topbar.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /foundation/index.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-01-12 02:01:45 -0800
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-01-12 02:02:12 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eNPdEwercsxb9fsZxz0Pc6AofYH7AKvtzkyrQ7AC/xo=", "commit"=>"Take track"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/new.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."remember_token" = '29d2c535b0fa25467c2e133736fbc881d7618822' LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-01-12 02:02:12 -0800
+Served asset /foundation_and_overrides.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/vendor/custom.modernizr.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:12 -0800
+Served asset /vendor/custom.modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:12 -0800
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:12 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.clearing.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.alerts.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.alerts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.cookie.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.cookie.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.forms.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.forms.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.magellan.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.placeholder.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.placeholder.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.orbit.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.joyride.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.reveal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.tooltips.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.tooltips.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.section.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.section.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/foundation.topbar.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tracks.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /tracks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/steps.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /steps.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/foundation/index.js?body=1" for 127.0.0.1 at 2014-01-12 02:02:13 -0800
+Served asset /foundation/index.js - 304 Not Modified (1ms)

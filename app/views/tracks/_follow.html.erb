@@ -1,3 +1,3 @@
-    <%= form_for(@track.students.build(user_id: 1)) do |f| %>
+    <%= form_for(@track.students.build(user_id: current_user.id)) do |f| %>
         <%= f.submit "Take track", class: "btn btn-large btn-primary" %>
     <% end %>

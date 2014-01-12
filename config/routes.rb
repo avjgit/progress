@@ -73,12 +73,14 @@ Progress::Application.routes.draw do
       resources :steps, :only => [:create]
       member do
         get :students
+        get :registrations
       end
     end
 
     resources :users do
       member do
         get :courses
+        get :registrations
       end
     end
 

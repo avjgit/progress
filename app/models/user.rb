@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
 
-
-
   before_save { self.email = email.downcase   }
   before_create :create_remember_token
 
@@ -20,9 +18,11 @@ class User < ActiveRecord::Base
     # has track as author!
     has_many :tracks     
     # has track as student!
-    has_many :tracks_users
-    has_many :courses, through: :tracks_users, source: :track
+    # has_many :tracks_users
+    # has_many :courses, through: :tracks_users, source: :track
     # accepts_nested_attributes_for :tracks_user
+    has_many :registrations
+    has_many :courses, through: :registrations, source: :track
 
 
   def User.new_remember_token
@@ -34,15 +34,15 @@ class User < ActiveRecord::Base
   end
 
   def learns?(track)
-    tracks_users.where(track_id: track.id).first
+    registrations.where(track_id: track.id).first
   end
 
   def learn!(track)
-    tracks_users.create!(track_id: track.id)
+    registrations.create!(track_id: track.id)
   end
 
   def unregister!(track)
-    tracks_users.where(track_id: track.id).first.destroy!
+    registrations.where(track_id: track.id).first.destroy!
   end
 
   private

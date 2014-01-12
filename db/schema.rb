@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140108124021) do
+ActiveRecord::Schema.define(:version => 20140112091925) do
+
+  create_table "registrations", :force => true do |t|
+    t.integer  "track_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "steps", :force => true do |t|
     t.integer  "track_id"
