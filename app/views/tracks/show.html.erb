@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <%= render :partial => @track %>
-<%= render 'shared/stats' %>
 <!-- <p>
   <b>Title:</b>
   <%= @track.title %>
@@ -23,6 +22,7 @@
 
 <br/><br/>
 
+
 <h3>Users registered for this course:</h3>
 <% @track.students %>
 <% @track.students.each do |student|%>
@@ -36,6 +36,7 @@
 <%= render :partial => @track.steps %>
 </div>
 
+<% if @track.user_id == current_user %>
 <%= form_for [@track, Step.new] do |f| %>
   <p>
     <h5>Add new step</h5>
@@ -46,4 +47,5 @@
     <%= f.text_area :description %>
   </p>
   <p><%= f.submit "Add step" %></p>
+<% end %>
 <% end %>

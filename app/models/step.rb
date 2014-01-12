@@ -3,7 +3,6 @@ class Step < ActiveRecord::Base
   attr_accessible :deadline, :description, :grade, :title, :weight
   validates_presence_of :deadline, :title, :weight
 
-
   has_many :submissions
   has_many :submits, through: :submissions, source: :user
 end
