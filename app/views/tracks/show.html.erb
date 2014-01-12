@@ -12,18 +12,24 @@
   <%= @track.description %>
 </p> -->
 
+<% unless current_user?(@track.user) %>
   <div class="span8">
     <%= render 'follow_form' if signed_in? %>
   </div>
+<% end %>
 
 <%= link_to 'Edit', edit_track_path(@track) %> |
 <%= link_to 'Back', tracks_path %>
 
-registred users:<br/>
+<br/><br/>
+
+<h3>Users registered for this course:</h3>
+<% @track.students %>
 <% @track.students.each do |student|%>
     <%= link_to student.id, student %><br/>
 <% end %>
 
+<br/>
 
 <h3>Steps</h3>
 <div id="steps">
