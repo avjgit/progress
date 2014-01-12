@@ -7,7 +7,17 @@
         <%= @user.name %>
         <%= @user.id %>
       </h1>
-      <h3>Steps</h3>
+
+      <% if current_user == @user %>
+
+      <h3>Tracks you are teaching:</h3>
+		<div id="learn">
+		<%= render :partial => @user.tracks %>
+		</div>
+
+	  <% end %>
+
+      <h3>Tracks you are learning:</h3>
 		<div id="learn">
 		<%= render :partial => @user.courses %>
 		</div>

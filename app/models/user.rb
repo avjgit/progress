@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
     accepts_nested_attributes_for :registrations
     accepts_nested_attributes_for :courses
 
+    has_many :submissions
+    has_many :grades, through: :submissions, source: :step
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64
@@ -40,6 +42,14 @@ class User < ActiveRecord::Base
 
   def learn!(track)
     registrations.create!(track_id: track.id)
+  end
+  
+  def submitted?(step)
+    submissions.where(step_id: step.id).first
+  end
+
+  def submit!(step)
+    submissions.create!(step_id: step.id)
   end
 
   def unregister!(track)

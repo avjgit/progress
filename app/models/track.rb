@@ -15,6 +15,5 @@ class Track < ActiveRecord::Base
     has_many :students, through: :registrations, source: :user
     accepts_nested_attributes_for :registrations
     accepts_nested_attributes_for :students
-
   
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  step_id: 1
+  user_id: 1
+  grade: MyString
+
+two:
+  step_id: 1
+  user_id: 1
+  grade: MyString
