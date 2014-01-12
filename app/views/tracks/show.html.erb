@@ -12,6 +12,9 @@
   <%= @track.description %>
 </p> -->
 
+  <div class="span8">
+    <%= render 'follow_form' if signed_in? %>
+  </div>
 
 <%= link_to 'Edit', edit_track_path(@track) %> |
 <%= link_to 'Back', tracks_path %>
