@@ -13,11 +13,14 @@
   <%= @track.description %>
 </p> -->
 
+<% if signed_in? %>
+
 <% unless current_user?(@track.user) %>
   <div class="span8">
     <%= render 'follow_form' if signed_in? %>
   </div>
 <% end %>
+
 
 <% if @track.user_id == current_user.id %>
 <%= link_to 'Edit', edit_track_path(@track) %> |
@@ -40,11 +43,14 @@
 <% end %>
 
 <br/>
+<% end %>
 
 <h3>Steps for this track:</h3>
 <div id="steps">
 <%= render :partial => @track.steps %>
 </div>
+
+<% if signed_in? %>
 
 <% if @track.user_id == current_user.id %>
   <%= form_for [@track, Step.new] do |f| %>
@@ -58,4 +64,5 @@
     </p>
     <p><%= f.submit "Add step" %></p>
   <% end %>
+<% end %>
 <% end %>
