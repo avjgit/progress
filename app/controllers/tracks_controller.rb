@@ -63,12 +63,18 @@ class TracksController < ApplicationController
 
     unless current_user?(@track.user)
       current_user.learn!(@track)
+
+      @track.steps.each do |step|
+        @subm = Submission.new(step_id: step.id, user_id: current_user.id, grade: 'not graded')
+        @subm.save
+      end
+
     end
     # redirect_to @track
 
     respond_to do |format|
       if @track.update_attributes(params[:track])
-        format.html { redirect_to @track, notice: 'Track was successfully updated.' }
+        format.html { redirect_to @track, notice: 'Track was successfully.'}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
