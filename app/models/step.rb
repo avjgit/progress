@@ -7,6 +7,12 @@ class Step < ActiveRecord::Base
   has_many :submits, through: :submissions, source: :user
 
   def current_grade(user)
-  	return submissions.where(step_id: self.id, user_id: user.id).first.grade
+  	@t = Track.find(self.track_id)
+
+  	if user.learns?(@t)
+  		return submissions.where(step_id: self.id, user_id: user.id).first.grade
+  	else
+  		return '-'
+  	end
   end
 end
