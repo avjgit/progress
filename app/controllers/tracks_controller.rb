@@ -61,7 +61,7 @@ class TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
 
-    unless current_user?(@track.user)
+    unless (current_user?(@track.user) and !current_user.learns(@track))
       current_user.learn!(@track)
 
       @track.steps.each do |step|

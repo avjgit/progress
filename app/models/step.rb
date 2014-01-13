@@ -5,4 +5,8 @@ class Step < ActiveRecord::Base
 
   has_many :submissions
   has_many :submits, through: :submissions, source: :user
+
+  def current_grade(user)
+  	return submissions.where(step_id: self.id, user_id: user.id).first.grade
+  end
 end
