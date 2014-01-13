@@ -61,7 +61,9 @@ class TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
 
-    current_user.learn!(@track)
+    unless current_user?(@track.user)
+      current_user.learn!(@track)
+    end
     # redirect_to @track
 
     respond_to do |format|
