@@ -22,14 +22,17 @@
 
 <br/><br/>
 
-
-<% if (@track.students.count == 0) %>
-    <h3><%='Hey, noone joined so far!'%></h3>
+<% if @track.user_id == current_user %>
+  <% if (@track.students.count == 0) %>
+      <h3><%='Hey, noone joined so far!'%></h3>
+  <% else %>
+      <h3>Users registered for this course:</h3>
+      <% @track.students.each do |student|%>
+          <%= link_to student.id, student %><br/>
+      <% end %>
+  <% end %>
 <% else %>
-    <h3>Users registered for this course:</h3>
-    <% @track.students.each do |student|%>
-        <%= link_to student.id, student %><br/>
-    <% end %>
+  <h3><%='Users registred for this course are visible for coach only.'%></h3>
 <% end %>
 
 <br/>
