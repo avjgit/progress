@@ -94,4 +94,7 @@ class TracksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def step_submit
+  end
 end
