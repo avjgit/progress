@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140112202806) do
+ActiveRecord::Schema.define(:version => 20140114091850) do
 
   create_table "registrations", :force => true do |t|
     t.integer  "track_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20140112202806) do
     t.string   "grade"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "submitted"
   end
 
   create_table "tracks", :force => true do |t|

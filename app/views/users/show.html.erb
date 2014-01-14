@@ -12,15 +12,16 @@
 
       <% if current_user == @user %>
 
-      <h3>Tracks you are teaching:</h3>
+      <h3>Tracks being teaching:</h3>
 		<div id="learn">
 		<%= render :partial => @user.tracks %>
 		</div>
 
 	  <% end %>
 
-      <h3>Tracks you are learning:</h3>
+      <h3>Tracks being learning:</h3>
 		<div id="learn">
+    <!-- todo: show just those being teached by coach, if coach viewing -->
 		<%= render :partial => @user.courses %>
 		</div>
     </section>

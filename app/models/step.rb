@@ -15,4 +15,18 @@ class Step < ActiveRecord::Base
   		return '-'
   	end
   end
+
+  def submitted(user)
+  	@t = Track.find(self.track_id)
+
+  	if user.learns?(@t)
+  		if submissions.where(step_id: self.id, user_id: user.id).first.submitted
+  			return 'submitted'
+  		else
+  			return 'not submitted'
+  		end
+  	else
+  		return '-'
+  	end
+  end  
 end

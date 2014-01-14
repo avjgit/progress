@@ -4,12 +4,21 @@
     <%= step.title %>
     </strong>
     , worth <%= step.weight %>%<br/>
+    
+    Submitted: 
+    <% if signed_in? %>
+        <%= step.submitted(current_user) %><br/>
+    <% else %>
+        -<br/>
+    <% end %>    
+
     Current grade: 
     <% if signed_in? %>
         <%= step.current_grade(current_user) %><br/>
     <% else %>
         -<br/>
     <% end %>
+
     Deadline is <%= step.deadline %>
     <br/>
     <%= step.description %>
